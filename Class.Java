@@ -107,13 +107,13 @@ public class Binary_tree {
 	    		System.out.println(n.value);
 	    		inorder_traversal(n.right());
 	    	}
-	    }
-	    
+	    } 
 	    public Node inorder_sucessor(Node n){
 	    	
 	    	if(n != null){
 	    		
 	    		if(n.right() != null){
+                  //I just have to check on the right subtree the "leftest" node    			
 	    			
 	    		   Node r = n.right();
 	    		   
@@ -123,6 +123,7 @@ public class Binary_tree {
 	    		   return r;
 	    		}
 	    	    if(n.right() == null) {
+	    	    	//I have to go back on the parents of the node,and stop when i find the first one than is bigger than n 
 	    	    	
 	    	    	Node r = n.get_parent();	    	    
 	    	    	while(r.value <= n.value) {
